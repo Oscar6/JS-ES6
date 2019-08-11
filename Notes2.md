@@ -1,5 +1,6 @@
 // http://thatjsdude.com/interview/js1.html
 
+
 // Check Prime
     function isPrime(n){
         var divisor = 2;
@@ -18,6 +19,7 @@
     = true
     > isPrime(237);
     = false
+
 
 // Better Prime
     function isPrime(n) {
@@ -43,3 +45,25 @@
     = true
     > isPrime(237);
     = false
+
+
+// Prime Factors
+
+    function primeFactors(n) {
+        var factors = [], 
+            divisor = 2;
+        
+        while(n>2) {
+            if(n % divisor == 0) {
+                factors.push(divisor); 
+                n= n/ divisor;
+            }
+            else {
+            divisor++;
+            }     
+        }
+        return factors;
+    }
+
+    > primeFactors(69);
+    = [3, 23]
