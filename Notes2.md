@@ -121,7 +121,6 @@
 
 // Merged two sorted away
 
-
 function mergeSortedArray(a, b){
   var merged = [], 
       aElm = a[0],
@@ -155,3 +154,24 @@ function mergeSortedArray(a, b){
 
 > mergeSortedArray([2,5,6,9], [1,2,3,29]);
  = [1, 2, 2, 3, 5, 6, 9, 29]
+
+
+ // Check for palindrome
+
+    function isPalindrome(str) {
+        var i, len = str.length;
+        for(i =0; i<len/2; i++) {
+            if (str[i]!== str[len -1 -i])
+            return false;
+        }
+        return true;
+    }
+
+    <!-- function checkPalindrom(str) {
+        return str == str.split('').reverse().join('');
+    } -->
+
+    > isPalindrome('madam')
+    = true
+    > isPalindrome('toyota')
+    = false
