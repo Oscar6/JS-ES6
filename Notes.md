@@ -41,3 +41,41 @@ JavaScript & ES6 Notes
             // condition ? result1 : result2
             return typeOf a === "number" ? "That's a number" : "That's not a number";
         }
+
+// Inheritance - FreeCodeCamp.org
+
+    // Supertype
+    function Animal() { }
+
+    Animal.prototype = {
+    constructor: Animal, 
+    eat: function() {
+        console.log("nom nom nom");
+    }
+    };
+
+    // Inheritance - New instance variables(duck & beagle) are inheriting Animal's prototype via creating a new object
+
+    let duck = Object.create(Animal.prototype); // Change this line
+    let beagle = Object.create(Animal.prototype); // Change this line
+
+    duck.eat(); // Should print "nom nom nom"
+    beagle.eat(); // Should print "nom nom nom"
+
+// Inheritance - Setting subtype or "child"(Dog) prototype to instance of the parent(Animal)
+    function Animal() { }
+
+    Animal.prototype = {
+    constructor: Animal,
+    eat: function() {
+        console.log("nom nom nom");
+    }
+    };
+
+    function Dog() { }
+
+    // Set prototype of Subtype/"child"(Dog) to be an instance of the Supertype/"parent"(Animal)
+    Dog.prototype = Object.create(Animal.prototype);
+
+    let beagle = new Dog();
+    beagle.eat();  // Should print "nom nom nom"
