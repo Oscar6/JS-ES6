@@ -79,3 +79,18 @@ JavaScript & ES6 Notes
 
     let beagle = new Dog();
     beagle.eat();  // Should print "nom nom nom"
+
+// Reset an inherited constructor property
+    function Animal() { }
+    function Bird() { }
+    function Dog() { }
+
+    Bird.prototype = Object.create(Animal.prototype);
+    Dog.prototype = Object.create(Animal.prototype);
+
+    // Manually set Bird's constructor property to the Bird object:
+    Bird.prototype.constructor = Bird;
+    Dog.prototype.constructor = Dog;
+
+    let duck = new Bird();
+    let beagle = new Dog();
