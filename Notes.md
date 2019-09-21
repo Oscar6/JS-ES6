@@ -94,3 +94,5 @@ JavaScript & ES6 Notes
 
     let duck = new Bird();
     let beagle = new Dog();
+
+// Continue OOP practice
