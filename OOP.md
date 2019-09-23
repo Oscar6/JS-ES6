@@ -77,3 +77,43 @@
 
     beagle.eat(); // Should print "nom nom nom"
     beagle.bark(); // Should print "Woof!"
+
+// Overriding inherited methods
+    function Bird() { }
+
+    Bird.prototype.fly = function() { 
+        return "I am flying!"; 
+    };
+
+    function Penguin() { }
+    Penguin.prototype = Object.create(Bird.prototype);
+    Penguin.prototype.constructor = Penguin;
+
+    // fly method is overriding Animal's method
+    Penguin.prototype.fly = function() {
+        return "Alas, this is a flightless bird."
+    }
+
+    let penguin = new Penguin();
+    console.log(penguin.fly());
+
+// Use a Mixin to add common behavior between unrelated objects
+    let bird = {
+    name: "Donald",
+    numLegs: 2
+    };
+
+    let boat = {
+    name: "Warrior",
+    type: "race-boat"
+    };
+
+    // glideMixin variable = Mixin defines glide method and gives objects(bird & boat) access to  // method
+    let glideMixin = function(obj) {
+        obj.glide = function() {
+            console.log("")
+        }
+    }
+
+    glideMixin(bird);
+    glideMixin(boat);
