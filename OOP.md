@@ -117,3 +117,18 @@
 
     glideMixin(bird);
     glideMixin(boat);
+
+// Using Closures to protect Properties within an Object from being modified externally
+    function Bird() {
+        
+        //let creates a private variable
+        let weight = 15;
+
+        //getWeight method has access to weight since it is created within the same function
+        this.getWeight = function() {
+            return weight;
+        };
+    }
+
+    let fowl = new Bird();
+    fowl.getWeight();
