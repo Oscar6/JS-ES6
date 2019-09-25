@@ -132,3 +132,15 @@
 
     let fowl = new Bird();
     fowl.getWeight();
+
+// Immediately Invoked Function Expression
+    function makeNest() {
+    console.log("A cozy nest is ready");
+    }
+
+    makeNest();
+
+    // Below is an anonymous version
+    (function () {
+    console.log("A cozy nest is ready");
+    }) ();
